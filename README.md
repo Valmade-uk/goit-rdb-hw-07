@@ -1,14 +1,24 @@
-# goit-rdb-hw-07
+# Relational Databases: Concepts and Techniques
 
-Домашнє завдання №7 — **Додаткові вбудовані SQL функції. Робота з часом та JSON** (MySQL).
+Тема завдання — **Додаткові вбудовані SQL функції. Робота з часом та JSON** (MySQL).
 
 ## Структура репозиторію
-- `hw07.sql` — SQL-код до всіх пунктів (p1–p5)
-- `screenshots/` — скріншоти виконання запитів і результатів (p1_... p5_...)
+
+```
+goit-rdb-hw-05/
+│
+├── task_1/                # вкладений запит в операторі SELECT
+├── task_2/                # вкладений запит в операторі WHERE
+├── task_3/                # вкладений запит в операторі FROM
+├── task_4/                # вкладений запит з використанням оператора WITH (CTE)
+├── task_5/                # створення функції ділення з двома параметрами типу FLOAT
+└── README.md
+```
+---
 
 ## Завдання та SQL-запити
 
-### p1 — Витягнути рік, місяць і число з `orders.date`
+### task_1 — Витягнути рік, місяць і число з `orders.date`
 ```sql
 SELECT
   id,
@@ -19,7 +29,7 @@ SELECT
 FROM orders;
 ```
 
-### p2 — Додати 1 день до `orders.date`
+### task_2 — Додати 1 день до `orders.date`
 ```sql
 SELECT
   id,
@@ -28,7 +38,7 @@ SELECT
 FROM orders;
 ```
 
-### p3 — Timestamp (секунди з початку епохи) для `orders.date`
+### task_3 — Timestamp (секунди з початку епохи) для `orders.date`
 ```sql
 SELECT
   id,
@@ -37,7 +47,7 @@ SELECT
 FROM orders;
 ```
 
-### p4 — Порахувати кількість рядків у діапазоні дат
+### task_4 — Порахувати кількість рядків у діапазоні дат
 ```sql
 SELECT
   COUNT(*) AS count_rows
@@ -45,7 +55,7 @@ FROM orders
 WHERE date BETWEEN '1996-07-10 00:00:00' AND '1996-10-08 00:00:00';
 ```
 
-### p5 — JSON-об’єкт `{"id": ..., "date": ...}` для кожного рядка
+### task_5 — JSON-об’єкт `{"id": ..., "date": ...}` для кожного рядка
 ```sql
 SELECT
   id,
